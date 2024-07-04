@@ -1,6 +1,6 @@
 ## Problem Description
 * Inside p2_floorplanning.pdf
-* Approaching method: B* Tree Floorplan with LinkedList Horicontal Contour
+* Approaching method: B* Tree Floorplan with LinkedList Horizontal Contour
 
 ## Execution
 * Change variable *TESTINPUT* inside Makefile before executing "make run" if you want to test different testcase
