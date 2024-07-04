@@ -18,3 +18,6 @@ $ make run
 $ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary
 $ make check
 ```
+
+## Visulizer
+...
