@@ -36,12 +36,13 @@ void SA::initBlocks(){
     // if there exist block inside blocks, delete all of it
     if(!blocks.empty()) blocks.clear();
     for(InputInf inf:inputInf){
-        Block tmpBlock;
-        tmpBlock.name = inf.name;
-        tmpBlock.w = inf.width;
-        tmpBlock.h = inf.height;
+        // Block tmpBlock;
+        // tmpBlock.name = inf.name;
+        // tmpBlock.w = inf.width;
+        // tmpBlock.h = inf.height;
 
-        blocks.push_back(tmpBlock);
+        // blocks.push_back(tmpBlock);
+        blocks.push_back(Block(inf.name,inf.width,inf.height));
     }
 }
 
@@ -208,9 +209,7 @@ double SA::calCost(){
         height = max(height, block.y + block.h);
     }
 
-    double area = width * height;
-
-    return area;
+    return width * height;
 }
 
 void SA::M1(int id){
@@ -534,6 +533,7 @@ void SA::simulateAnnealing(){
 }
 
 bool SA::isValid(){
+    // Check whether current floorplan is legal
     int width = 0, height = 0;
     for(Block const &block:blocks){
         width = max(width, block.x + block.w);

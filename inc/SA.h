@@ -32,9 +32,14 @@ public:
             w(0),
             h(0),
             isRotate(false) {};
+    Block(string n, int w_in, int h_in):name(n),
+                                        x(0),
+                                        y(0),
+                                        w(w_in),
+                                        h(h_in),
+                                        isRotate(false) {};
     ~Block(){};
 
-    // todo: add its name
     string name;
     int x, y;
     int w, h;
@@ -59,10 +64,10 @@ public:
 
 class SA{
 public:
-    SA(): R_upperBound(0.0),
+    SA(): root(nullptr),
           R_lowerBound(0.0),
-          blockNum(0),
-          root(nullptr) {};
+          R_upperBound(0.0),
+          blockNum(0) {};
     ~SA(){};
 
     Node* root;
@@ -77,6 +82,7 @@ public:
     // file I/O
     void build(string fildname);
     void printOutput(string filename);
+
     // BST
     void buildBST();
     vector<int> initRemainBlocks();
@@ -90,7 +96,7 @@ public:
     bool isValid();
 
     // annealing schedule
-    void M1(int id);           // rotate block
+    void M1(int id);               // rotate block
     void M2(Node* n1, Node* n2);   // swap 2 nodes
     void M3(Node* from, Node* to); // remove and insert block
 

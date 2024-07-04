@@ -12,11 +12,12 @@ SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 # testcase file
-CASEDIR = case
+CASEDIR = testcase
+OUTPUTDIR = output
 
 # change here!!
-TESTINPUT = $(CASEDIR)/case1.in
-TESTOUTPUT = case1.out
+TESTINPUT = case1.txt
+TESTOUTPUT = $(TESTINPUT).out
 
 TARGET = Floorplan
 
@@ -25,17 +26,20 @@ all: $(TARGET)
 $(OBJDIR):
 	@mkdir $(OBJDIR)
 
-$(TARGET): main.cpp $(OBJS)
+$(OUTPUTDIR):
+	@mkdir $(OUTPUTDIR)
+
+$(TARGET): main.cpp $(OBJS) | $(OUTPUTDIR)
 	$(CXX) $(WARNINGS) $(CXXFLAGS) $(OPTFLAGS) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(WARNINGS) $(CXXFLAGS) $(OPTFLAGS) -c $< -o $@
 
 run:
-	./$(TARGET) $(TESTINPUT) $(TESTOUTPUT)
+	./$(TARGET) $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT)
 
 check:
-	./SolutionChecker $(TESTINPUT) $(TESTOUTPUT)
+	./$(CASEDIR)/SolutionChecker $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT)
 
 clean:
-	rm -rf $(OBJDIR) $(TARGET) *.out
+	rm -rf $(OBJDIR) $(TARGET) $(OUTPUTDIR)
