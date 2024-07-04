@@ -13,7 +13,6 @@ $ make run
 * Remember to change variable *TESTINPUT* inside Makefile before executing make check
 
 ```makefile
-$ cd testcase
-$ chmod 755 SolutionChecker # Let SolutionChecker be an executable binary file
+$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary file
 $ make check
 ```
