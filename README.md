@@ -1,5 +1,5 @@
 ## Problem Description
-You can see it in p2_floorplanning.pdf
+Inside p2_floorplanning.pdf
 
 ## Execution
 
@@ -13,6 +13,6 @@ $ make run
 * Remember to change variable *TESTINPUT* inside Makefile before executing make check
 
 ```makefile
-$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary file
+$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary
 $ make check
 ```
