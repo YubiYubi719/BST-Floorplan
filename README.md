@@ -19,5 +19,5 @@ $ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable bina
 $ make check
 ```
 
-## Visulizer
+## Visualizer
 ...
