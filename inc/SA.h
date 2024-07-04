@@ -70,15 +70,6 @@ public:
           blockNum(0) {};
     ~SA(){};
 
-    Node* root;
-    double R_lowerBound, R_upperBound;
-    int blockNum;
-    int totalArea;
-    vector<InputInf> inputInf;
-    vector<Node> BST;
-    vector<Block> blocks; // floorplan inf
-    list<ContourElement> contour;
-
     // file I/O
     void build(string fildname);
     void printOutput(string filename);
@@ -102,4 +93,14 @@ public:
 
     double initialTemperature();
     void simulateAnnealing();
+
+    // member variables 
+    Node* root;
+    double R_lowerBound, R_upperBound;
+    int blockNum;
+    int totalArea;
+    vector<InputInf> inputInf;
+    vector<Node> BST;
+    vector<Block> blocks; // floorplan inf
+    list<ContourElement> contour;
 };

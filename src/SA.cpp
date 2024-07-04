@@ -36,12 +36,6 @@ void SA::initBlocks(){
     // if there exist block inside blocks, delete all of it
     if(!blocks.empty()) blocks.clear();
     for(InputInf inf:inputInf){
-        // Block tmpBlock;
-        // tmpBlock.name = inf.name;
-        // tmpBlock.w = inf.width;
-        // tmpBlock.h = inf.height;
-
-        // blocks.push_back(tmpBlock);
         blocks.push_back(Block(inf.name,inf.width,inf.height));
     }
 }

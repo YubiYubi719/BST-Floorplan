@@ -16,7 +16,7 @@ CASEDIR = testcase
 OUTPUTDIR = output
 
 # change here!!
-TESTINPUT = case1.txt
+TESTINPUT = case6.txt
 TESTOUTPUT = $(TESTINPUT).out
 
 TARGET = Floorplan
