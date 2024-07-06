@@ -25,7 +25,7 @@ $ make check
 ```
 
 ## Visualizer
-* It's a simple binary that visualize your floorplan, the result fiugure will be put in *fig* directory
+* It's a simple binary that visualize your floorplan, the result figure will be put in *fig* directory
 
 ```makefile
 $ make figure
