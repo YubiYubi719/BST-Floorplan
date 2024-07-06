@@ -19,6 +19,7 @@ $ make run
 ## SolutionChecker
 * You can also use the solution checker provided by TAs.
 * Remember to change variable *TESTINPUT* inside Makefile before executing "make check"
+* Note: The output.txt cannot contain an empty line at the end of the file; otherwise, the solution checker would have some weird problems
 
 ```makefile
 $ make check
