@@ -8,6 +8,7 @@ WARNINGS = -g -Wall
 SRCDIR = src
 OBJDIR = obj
 INCDIR = inc
+FIGDIR = fig
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
@@ -29,17 +30,23 @@ $(OBJDIR):
 $(OUTPUTDIR):
 	@mkdir $(OUTPUTDIR)
 
-$(TARGET): main.cpp $(OBJS) | $(OUTPUTDIR)
+$(FIGDIR):
+	@mkdir $(FIGDIR)
+
+$(TARGET): main.cpp $(OBJS)
 	$(CXX) $(WARNINGS) $(CXXFLAGS) $(OPTFLAGS) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(WARNINGS) $(CXXFLAGS) $(OPTFLAGS) -c $< -o $@
 
-run:
+run: | $(OUTPUTDIR)
 	./$(TARGET) $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT)
 
 check:
 	./$(CASEDIR)/SolutionChecker $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT)
 
+figure: | $(FIGDIR)
+	python3 visualize.py $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT) $(FIGDIR)/$(TESTINPUT)
+
 clean:
-	rm -rf $(OBJDIR) $(TARGET) $(OUTPUTDIR)
+	rm -rf $(OBJDIR) $(TARGET) $(OUTPUTDIR) $(FIGDIR)
