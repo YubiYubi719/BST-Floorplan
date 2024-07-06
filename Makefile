@@ -46,7 +46,7 @@ check:
 	./$(CASEDIR)/SolutionChecker $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT)
 
 figure: | $(FIGDIR)
-	python3 visualize.py $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT) $(FIGDIR)/$(TESTINPUT)
+	./visualizer $(CASEDIR)/$(TESTINPUT) $(OUTPUTDIR)/$(TESTOUTPUT) $(FIGDIR)/$(TESTINPUT)
 
 clean:
 	rm -rf $(OBJDIR) $(TARGET) $(OUTPUTDIR) $(FIGDIR)
