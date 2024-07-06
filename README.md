@@ -20,4 +20,8 @@ $ make check
 ```
 
 ## Visualizer
-...
+* The output result will be put in *fig* directory
+
+```makefile
+$ make figure
+```
