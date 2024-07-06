@@ -2,6 +2,12 @@
 * Inside p2_floorplanning.pdf
 * Approaching method: B* Tree Floorplan with LinkedList Horizontal Contour
 
+## Setup
+```makefile
+$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary
+$ chmod 755 visualizer
+```
+
 ## Execution
 * Change variable *TESTINPUT* inside Makefile before executing "make run" if you want to test different testcase
 
@@ -15,7 +21,6 @@ $ make run
 * Remember to change variable *TESTINPUT* inside Makefile before executing "make check"
 
 ```makefile
-$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary
 $ make check
 ```
 
