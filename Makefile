@@ -8,16 +8,16 @@ WARNINGS = -g -Wall
 SRCDIR = src
 OBJDIR = obj
 INCDIR = inc
-FIGDIR = fig
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 # testcase file
 CASEDIR = testcase
 OUTPUTDIR = output
+FIGDIR = fig
 
 # change here!!
-TESTINPUT = case6.txt
+TESTINPUT = case2.txt
 TESTOUTPUT = $(TESTINPUT).out
 
 TARGET = Floorplan
