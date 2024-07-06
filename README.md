@@ -4,7 +4,7 @@
 
 ## Setup
 ```makefile
-$ chmod 755 testcase/SolutionChecker # Let SolutionChecker be an executable binary
+$ chmod 755 testcase/SolutionChecker
 $ chmod 755 visualizer
 ```
 
