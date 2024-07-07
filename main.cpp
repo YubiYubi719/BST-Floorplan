@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
     // SA
     while(true){
         sa.simulateAnnealing();
-        if(sa.isValid()) break; // Break if current floorpan is legal
+        if(sa.isValid()) break; // Break if current floorplan is legal
     }
     // Write output
     sa.printOutput(argv[2]);
