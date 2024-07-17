@@ -4,8 +4,7 @@
 
 ## Setup
 ```makefile
-$ chmod 755 testcase/SolutionChecker
-$ chmod 755 visualizer
+$ chmod 755 testcase/SolutionChecker visualizer
 ```
 
 ## Execution
